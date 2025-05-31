@@ -9,7 +9,7 @@ class Card:
         self.rank = rank
         self.suit = suit
 
-    def __repr_(self):
+    def __str__(self):
         return f"{self.rank} of {self.suit}"
 
 class Deck:
@@ -31,14 +31,14 @@ class Deck:
         else:
             return None
 
-        def count(self):
-            return len(self.deck)
+    def count(self):
+        return len(self.deck)
 
 def main():
     deck = Deck()
     print("Card Dealer\n")
     print("I have shuffled a deck of 52 cards.")
-    while desk.count() > 0:
+    while deck.count() > 0:
         try:
             num_cards = int(input("Enter the number of cards to deal (or 0 to exit): "))
             if num_cards == 0:
@@ -46,23 +46,21 @@ def main():
             elif num_cards > deck.count():
                 print(f"Cannot deal {num_cards} cards. Only {deck.count()} cards left in the deck.")
                 continue
-            except ValueError:
-                print("Please enter a valid number.")
-                continue 
+        except ValueError:
+            print("Please enter a valid number.")
+            continue 
 
             dealt_cards = deck.deal(num_cards)
             print(f"\nHere are your {num_cards} cards:")
             for card in dealt_cards:
                 print(card)
-            print(f"There are {deck.count()} cards left in deck. :
+            print(f"There are {deck.count()} cards left in deck. :")
 
-             
-
-
-
-
-        print("No more cards left in the deck.")
-    print("Game ended.")
+            if deck.count() > 0:
+                input("Please \"enter\" to continue. . .")
+            else:
+                print("No more cards left in the deck.")
+        print("Game ended.")
 
 if __name__ == "__main__":
     main()
