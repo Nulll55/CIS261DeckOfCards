@@ -24,7 +24,7 @@ class Deck:
         random.shuffle(self.deck)
 
     def deal(self, number):
-        if number <= len(self.ddeck):
+        if number <= len(self.deck):
             dealt_cards = self.deck[:number]
             self.deck = self.deck[number:]
             return dealt_cards
@@ -50,17 +50,17 @@ def main():
             print("Please enter a valid number.")
             continue 
 
-            dealt_cards = deck.deal(num_cards)
-            print(f"\nHere are your {num_cards} cards:")
-            for card in dealt_cards:
-                print(card)
-            print(f"There are {deck.count()} cards left in deck. :")
+        dealt_cards = deck.deal(num_cards)
+        print(f"\nHere are your {num_cards} cards:")
+        for card in dealt_cards:
+            print(card)
+        print(f"There are {deck.count()} cards left in deck. :")
 
-            if deck.count() > 0:
-                input("Please \"enter\" to continue. . .")
-            else:
-                print("No more cards left in the deck.")
-        print("Game ended.")
+        if deck.count() > 0:
+            input("Please \"enter\" to continue. . .")
+        else:
+            print("No more cards left in the deck.")
+    print("Game ended.")
 
 if __name__ == "__main__":
     main()
