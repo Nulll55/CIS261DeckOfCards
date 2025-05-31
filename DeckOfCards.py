@@ -9,7 +9,7 @@ class Card:
         self.rank = rank
         self.suit = suit
 
-    def __str__(self):
+    def __repr__(self):
         return f"{self.rank} of {self.suit}"
 
 class Deck:
